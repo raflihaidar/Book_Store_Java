@@ -49,11 +49,11 @@ public class Book extends Product implements Book_Information{
     public void detailProduct(){
         System.out.println("Book Name\t\t: " + getName());
         System.out.println("   Author\t\t: " + getAuthor());
-        System.out.println("   Price\t\t: " + getPrice());
+        System.out.println("   Price\t\t: " + "$" + getPrice());
         System.out.println("   Book Category\t: " + geBookCategory());
         System.out.println("   Publication Date\t: " + getPublicationDate());
         System.out.println("   Number of Page\t: " + getNumberOfPages());
-        System.out.println("   Book Langauge\t: " + getBookLanguage());
+        System.out.println("   Book Language\t: " + getBookLanguage());
         System.out.println("   Stock\t\t: " + getStock());
     }
 }

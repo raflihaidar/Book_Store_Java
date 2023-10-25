@@ -12,7 +12,7 @@ public class Gramedia_store implements store {
     Cart cart = new Cart();
     
     @Override
-    public void addBook(Book book){
+    public void setBookList(Book book){
         bookList.add(book);
     }
     
@@ -34,7 +34,7 @@ public class Gramedia_store implements store {
             int cartIndex = cart.getCartList().indexOf(item);
             int indexBook = bookList.indexOf(item);
             int currStock = bookList.get(indexBook).getStock() - quantity;
-            boolean checkCondition = item.getId() == index;
+            boolean checkCondition = item.getId() == index && quantity <= item.getStock() ;
             if(checkCondition){
                 bookList.get(indexBook).setStock(currStock);
                 int dataQuantity = cart.getQuantityList().get(cartIndex);
@@ -46,7 +46,7 @@ public class Gramedia_store implements store {
         
         if(!status){
             for(Book book : bookList) {
-                boolean checkCondition = book.getId() == index;
+                boolean checkCondition = book.getId() == index && quantity <= book.getStock();
                 int currStock = book.getStock() - quantity;
                 if(checkCondition){
                     book.setStock(currStock);

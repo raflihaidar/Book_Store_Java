@@ -48,7 +48,7 @@ public class Book_purchases {
                                 "Clean Code", 
                                 "Robert C.Martin", 
                                 15, 
-                                30.00,
+                                30,
                                 "Programming",
                                 "4 January 2004",
                                 250,
@@ -70,10 +70,10 @@ public class Book_purchases {
         Gramedia_store store = new Gramedia_store();
 
         // Tambah ke arrayList
-        store.addBook(book1);
-        store.addBook(book2);
-        store.addBook(book3);
-        store.addBook(book4);
+        store.setBookList(book1);
+        store.setBookList(book2);
+        store.setBookList(book3);
+        store.setBookList(book4);
 
         while (!stop) {
             Scanner dd = new Scanner(System.in);
