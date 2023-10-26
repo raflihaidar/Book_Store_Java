@@ -1,4 +1,4 @@
-package book_purchases;
+package ProductPackages;
 
 /**
  *

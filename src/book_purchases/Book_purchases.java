@@ -1,6 +1,8 @@
 
 package book_purchases;
 
+import AtributePackages.*;
+import ProductPackages.Book;
 import java.util.Scanner;
 
 /**
@@ -68,6 +70,7 @@ public class Book_purchases {
 
         // create object cart dari class Gramedia Store
         Gramedia_store store = new Gramedia_store();
+        Cart cart = new Cart();
 
         // Tambah ke arrayList
         store.setBookList(book1);
@@ -94,13 +97,13 @@ public class Book_purchases {
                     System.out.print("Enter quantity : ");
                     String quantityInput = dd.nextLine();
                     int quantity = Integer.parseInt(quantityInput);
-                    store.addToCart(input, quantity);
+                    cart.setCartList(cart, store, input, quantity);
                 }
                 case 2 -> {
-                    store.cart.showCart();
-                    store.cart.getPaymentAmount();
+                    cart.showCart();
+                    cart.getPaymentAmount();
                 }
-                case 3 -> store.buyBookFromCart();
+                case 3 -> cart.checkOut(cart);
                 case 4 -> stop = true;
                 default -> System.out.println("Input Error");
             }
